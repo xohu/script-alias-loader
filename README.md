@@ -13,12 +13,18 @@ cnpm install @xohu/script-alias-loader -D
 使用此 loader 将使你能在 script 中使用 alias别名 定义图片路径
 ```
 
+## 参数
+```
+// 别名数组
+{ alias: ['@', '@public'] }
+```
+
 ## 配置
 ``` js
 // vue.config.js
 module.exports = {
     chainWebpack: config => {
-        config.module.rule('vue').use('script-alias-loader').loader('@xohu/script-alias-loader')
+        config.module.rule('vue').use('script-alias-loader').loader('@xohu/script-alias-loader').options({ alias: ['@', '@public'] })
     }
 }
 ```
